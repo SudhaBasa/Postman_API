@@ -177,6 +177,27 @@
 		},
 		{
 			"name": "DeleteBook",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5c03892c-e54b-4d34-bb94-0a96a2d6ec0f",
+						"exec": [
+							"const jsonData=pm.response.json();\r",
+							"\r",
+							"pm.test(\"Validate the Json Response Code\",()=>{\r",
+							"\r",
+							"pm.response.to.have.status(200);\r",
+							"pm.response.to.have.jsonSchema(schema);\r",
+							"pm.expect(jsonData.msg).to.eql(\"book is successfully deleted\");\r",
+							"\r",
+							"}); "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"id": "c620b03e-96cf-4f9b-b3a1-2a7f11f7b2b0",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
