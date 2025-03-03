@@ -101,10 +101,12 @@
 					"script": {
 						"id": "baf8f329-75bd-489d-8993-96bd05e86d66",
 						"exec": [
+							"const getBookResponse=pm.response.json();\r",
+							"\r",
 							"pm.test(\"Validate the Json Response logic\",()=>{\r",
+							"console.log(getBookResponse);\r",
 							"\r",
-							"\r",
-							"});"
+							"}); "
 						],
 						"type": "text/javascript",
 						"packages": {}
