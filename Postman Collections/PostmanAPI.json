@@ -14,6 +14,11 @@
 						"id": "d29d82db-3763-4aeb-a5f1-37f59711d00d",
 						"exec": [
 							"const jsonData=pm.response.json();\r",
+							"console.log(jsonData);\r",
+							"console.log(jsonData.ID);\r",
+							"\r",
+							"\r",
+							"\r",
 							"\r",
 							"pm.test(\"validate statuscode is 200\",function(){\r",
 							"  pm.response.to.have.status(200);  \r",
@@ -65,7 +70,24 @@
 						}
 					}
 				},
-				"url": "{{base_url}}/Library/Addbook.php"
+				"url": {
+					"raw": "{{base_url}}/Library/Addbook.php",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"Library",
+						"Addbook.php"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"type": "text",
+							"disabled": true
+						}
+					]
+				}
 			},
 			"response": []
 		},
