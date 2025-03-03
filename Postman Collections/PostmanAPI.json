@@ -49,7 +49,8 @@
 							"//console.log(pm.globals.get(\"companyCode\"));\r",
 							"const code=pm.globals.get(\"companyCode\");\r",
 							"const val=pm.variables.replaceIn('{{$randomInt}}')\r",
-							"pm.collectionVariables.set(\"isbn\",code+val);"
+							"pm.collectionVariables.set(\"isbn\",code+val);\r",
+							"pm.collectionVariables.set(\"author_name\",\"Sudha Madhuri\");"
 						],
 						"type": "text/javascript",
 						"packages": {}
