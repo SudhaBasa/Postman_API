@@ -58,7 +58,7 @@
 							" pm.expect(jsonData).to.have.property(\"ID\");\r",
 							"    }\r",
 							"    catch(err){\r",
-							"      if (jsonData.msg.includes(\"Exists\")){\r",
+							"      if (jsonData.Msg.includes(\"Exists\")){\r",
 							"        cleanupScript();\r",
 							"      }  \r",
 							"    }\r",
