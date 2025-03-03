@@ -135,6 +135,13 @@
 							"pm.test(\"Validate the Json Response logic\",()=>{\r",
 							"console.log(getBookResponse);\r",
 							"pm.expect(getBookResponse[0].author).to.eql(pm.collectionVariables.get(\"author_name\"))\r",
+							"}); \r",
+							"\r",
+							"pm.test(\"Validate the Json Response Schema\",()=>{\r",
+							"\r",
+							"pm.response.to.have.status(200);\r",
+							"pm.response.to.have.jsonSchema(schema);\r",
+							"\r",
 							"}); "
 						],
 						"type": "text/javascript",
