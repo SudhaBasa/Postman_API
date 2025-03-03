@@ -67,7 +67,9 @@
 							"const code=pm.globals.get(\"companyCode\");\r",
 							"const val=pm.variables.replaceIn('{{$randomInt}}')\r",
 							"pm.collectionVariables.set(\"isbn\",code+val);\r",
-							"pm.collectionVariables.set(\"author_name\",\"Sudha Madhuri\");"
+							"pm.collectionVariables.set(\"book_name\",pm.iterationData.get(\"BookName\"));\r",
+							"pm.collectionVariables.set(\"author_name\",);\r",
+							""
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -251,7 +253,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "b8491dbd-2663-4e72-87c4-483f413bb32d",
+				"id": "f944b29e-434d-45bd-ab8b-e851305acd2c",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -262,7 +264,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "ff2a2b90-7b9d-4eb7-8127-61a461b63c05",
+				"id": "fd4e83b4-b921-4a5e-878c-e2b0397ab80f",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -279,6 +281,11 @@
 		},
 		{
 			"key": "author_name",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "book_name",
 			"value": "",
 			"type": "string"
 		}
