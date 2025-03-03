@@ -68,7 +68,10 @@
 							"const val=pm.variables.replaceIn('{{$randomInt}}')\r",
 							"pm.collectionVariables.set(\"isbn\",code+val);\r",
 							"pm.collectionVariables.set(\"book_name\",pm.iterationData.get(\"BookName\"));\r",
-							"pm.collectionVariables.set(\"author_name\",);\r",
+							"console.log(pm.collectionVariables.get(\"book_name\"));\r",
+							"\r",
+							"pm.collectionVariables.set(\"author_name\",pm.iterationData.get(\"Author\"));\r",
+							"console.log(pm.collectionVariables.get(\"author_name\"));\r",
 							""
 						],
 						"type": "text/javascript",
@@ -85,7 +88,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\r\n\"name\":\"Learn Appium Automation with Java\",\r\n\"isbn\":\"{{isbn}}\",\r\n\"aisle\":\"227\",\r\n\"author\":\"{{author_name}}\"\r\n}\r\n",
+					"raw": "{\r\n\r\n\"name\":\"{{book_name}}\",\r\n\"isbn\":\"{{isbn}}\",\r\n\"aisle\":\"227\",\r\n\"author\":\"{{author_name}}\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
