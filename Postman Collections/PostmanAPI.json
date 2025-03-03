@@ -95,6 +95,22 @@
 		},
 		{
 			"name": "GetBook",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "baf8f329-75bd-489d-8993-96bd05e86d66",
+						"exec": [
+							"pm.test(\"Validate the Json Response logic\",()=>{\r",
+							"\r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"id": "ec1ac3b9-f68f-41bc-b451-7ef6b9ec2204",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
