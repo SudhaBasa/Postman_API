@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "b9973609-8c95-444b-babe-551b5ff47176",
+		"name": "Library",
+		"schema": "https://schema.postman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AddBook",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d29d82db-3763-4aeb-a5f1-37f59711d00d",
+						"exec": [
+							"const jsonData=pm.response.json();\r",
+							"//try to fork my collection\r",
+							"pm.test(\"validate statuscode is 200\",function(){\r",
+							"  pm.response.to.have.status(200);  \r",
+							"  pm.expect(jsonData).to.have.property(\"Msg\");\r",
+							"  pm.expect(jsonData.Msg).to.eql(\"successfully added\");\r",
+							"});\r",
+							"\r",
+							"// pm.test(\"hi\",()=>{\r",
+							"    \r",
+							"// });"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "6f0cfe76-362e-4915-932b-e5f5d7591bf9",
+						"exec": [
+							"//console.log(pm.globals.get(\"companyCode\"));\r",
+							"const code=pm.globals.get(\"companyCode\");\r",
+							"const val=pm.variables.replaceIn('{{$randomInt}}')\r",
+							"pm.collectionVariables.set(\"isbn\",code+val);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "403fbc13-79b0-4b5c-b271-d0371048161a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n\"name\":\"Learn Appium Automation with Java\",\r\n\"isbn\":\"{{isbn}}\",\r\n\"aisle\":\"227\",\r\n\"author\":\"John foe\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{base_url}}/Library/Addbook.php"
+			},
+			"response": []
+		},
+		{
+			"name": "GetBook",
+			"id": "ec1ac3b9-f68f-41bc-b451-7ef6b9ec2204",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/Library/GetBook.php?ID=afgbc227",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"Library",
+						"GetBook.php"
+					],
+					"query": [
+						{
+							"key": "ID",
+							"value": "afgbc227"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteBook",
+			"id": "c620b03e-96cf-4f9b-b3a1-2a7f11f7b2b0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \r\n\"ID\" : \"afgbc227\"\r\n \r\n} \r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{base_url}}/Library/DeleteBook.php"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "95204e1c-d0c8-4f58-b8ab-a39f63d9aa07",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "3fbe1d78-21c1-474f-a813-d04e8511e7cf",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "isbn",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
