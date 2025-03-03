@@ -14,7 +14,8 @@
 						"id": "d29d82db-3763-4aeb-a5f1-37f59711d00d",
 						"exec": [
 							"const jsonData=pm.response.json();\r",
-							"//try to fork my collection\r",
+							"\r",
+							"\r",
 							"pm.test(\"validate statuscode is 200\",function(){\r",
 							"  pm.response.to.have.status(200);  \r",
 							"  pm.expect(jsonData).to.have.property(\"Msg\");\r",
