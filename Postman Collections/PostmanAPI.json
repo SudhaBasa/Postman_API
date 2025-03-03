@@ -17,7 +17,7 @@
 							"console.log(jsonData);\r",
 							"console.log(jsonData.ID);\r",
 							"const bookId=jsonData.ID;\r",
-							"pm.collectionVariables.set(\"book_id\",bookId)\r",
+							"pm.environment.set(\"book_id\",bookId)\r",
 							"\r",
 							"\r",
 							"\r",
