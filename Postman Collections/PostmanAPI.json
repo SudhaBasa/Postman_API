@@ -16,6 +16,8 @@
 							"const jsonData=pm.response.json();\r",
 							"console.log(jsonData);\r",
 							"console.log(jsonData.ID);\r",
+							"const bookId=jsonData.ID;\r",
+							"pm.collectionVariables.set(\"book_id\",bookId)\r",
 							"\r",
 							"\r",
 							"\r",
@@ -101,7 +103,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{base_url}}/Library/GetBook.php?ID=afgbc227",
+					"raw": "{{base_url}}/Library/GetBook.php?ID={{book_id}}",
 					"host": [
 						"{{base_url}}"
 					],
@@ -112,7 +114,7 @@
 					"query": [
 						{
 							"key": "ID",
-							"value": "afgbc227"
+							"value": "{{book_id}}"
 						}
 					]
 				}
@@ -130,7 +132,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n \r\n\"ID\" : \"afgbc227\"\r\n \r\n} \r\n",
+					"raw": "{\r\n \r\n\"ID\" : \"{{book_id}}\"\r\n \r\n} \r\n",
 					"options": {
 						"raw": {
 							"language": "json"
