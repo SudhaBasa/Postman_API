@@ -106,7 +106,7 @@
 							"\r",
 							"pm.test(\"Validate the Json Response logic\",()=>{\r",
 							"console.log(getBookResponse);\r",
-							"\r",
+							"pm.expect(getBookResponse[0].author).to.eql(pm.collectionVariables.get(\"author_name\"))\r",
 							"}); "
 						],
 						"type": "text/javascript",
@@ -167,7 +167,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "95204e1c-d0c8-4f58-b8ab-a39f63d9aa07",
+				"id": "b8491dbd-2663-4e72-87c4-483f413bb32d",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -178,7 +178,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "3fbe1d78-21c1-474f-a813-d04e8511e7cf",
+				"id": "ff2a2b90-7b9d-4eb7-8127-61a461b63c05",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -190,6 +190,11 @@
 	"variable": [
 		{
 			"key": "isbn",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "author_name",
 			"value": "",
 			"type": "string"
 		}
